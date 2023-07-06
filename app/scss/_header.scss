@@ -1,0 +1,19 @@
+// header for mobile :- 
+header {
+
+    nav {
+
+        @include breakpoint-up(large) {
+            display: none;
+        }
+
+        @include breakpoint-down(medium) {
+            padding: 2.5625rem 2rem;
+        }
+
+        img {
+            max-width: 8.8125rem;
+            height: 2.1875rem;
+        }
+    }
+}

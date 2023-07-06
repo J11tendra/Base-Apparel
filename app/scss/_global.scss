@@ -1,0 +1,55 @@
+// Base styling:-
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+
+// Parent box-sizig:- 
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+// body:-
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    color: $desaturated-red;
+}
+
+// Padding :- 
+.container {
+
+    @include breakpoint-down(medium) {
+        padding-top: 5.625rem;
+    }
+    // padding-right: 2rem;
+    // padding-top: 1.8rem;
+    &__h1 {
+        padding-bottom: 2.625rem;
+    }
+
+    &__email {
+        padding-top: 3.375rem;
+    }
+
+    &__para {
+
+        @include breakpoint-down(medium) {
+            padding-left: 2.5rem;
+            padding-right: 2.5rem;
+            padding-bottom: 3.375rem;
+        }
+       
+        @include breakpoint-up(large) {
+            padding-left: 10.375rem;
+            padding-right: 13rem;
+            padding-bottom: 2.875rem;
+        }
+    }
+}

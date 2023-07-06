@@ -1,0 +1,183 @@
+// 
+.hero {
+
+    @include breakpoint-up(large) {
+        display: grid;
+        grid-template-columns: 1.37fr 1fr;
+        grid-template-areas: 
+        "text image"
+        ;
+    }
+
+    
+
+    &__text {
+        grid-area: text;
+
+        @include breakpoint-down(medium) {
+            text-align: center;
+        }
+
+
+        @include breakpoint-up(large) {
+            position: relative;
+            background-image: url("/images/bg-pattern-desktop.svg");
+            background-repeat: no-repeat;
+            min-height: 21.5625rem;
+        }
+
+        .logo {
+
+            padding-top: 4.125rem;
+            max-height: 2rem;
+            max-width: 10.125rem;
+            padding-bottom: 8.25rem;
+
+            @include breakpoint-down(medium) {
+                display: none;
+            }
+        }
+
+
+        h1 {
+            font-size: 3.5rem;
+            // font-weight: $font-med;
+            letter-spacing: 1rem;
+            color: $darkgrayish-red;
+            margin: -0.5rem 0;
+            line-height: 4rem;
+
+            span {
+                display: block;
+                font-size: 3.5rem;
+                font-weight: 1;
+                color: $desaturated-red;
+                letter-spacing: 1rem;
+            }
+        }
+    }
+
+    &__image {
+
+        grid-area: image;
+
+        @include breakpoint-down(medium) {
+            position: relative;
+            background-image: url("/images/hero-mobile.jpg");
+            background-size: cover;
+            background-position: left center;
+            background-repeat: no-repeat;
+            min-height: 21.5625rem;
+        }
+
+        @include breakpoint-up(medium) {
+            position: relative;
+            background-image: url("/images/hero-mobile.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            min-height: 30rem;
+        }
+
+        @include breakpoint-up(large) {
+            position: relative;
+            background-image: url("/images/hero-desktop.jpg");
+            background-repeat: no-repeat;
+            min-height: 50rem;
+        }
+    }
+
+    &__para {
+        font-size: 1.125rem;
+        font-weight: $font-sm;
+    }
+
+    &__form {
+
+        label {
+            position: relative;
+
+            img.icon-error {
+                display: none;
+                position: absolute;
+                // top: 0;
+                right: 0;
+                bottom: -2px;
+                transform: translateX(-450%);
+                // transform: translateY(-100%);
+            }
+
+            svg.icon-success {
+                display: none;
+                position: absolute;
+                height: 28px;
+                // top: 0;
+                bottom: -4px;
+                right: 0;
+                transform: translateX(-376%);
+            }
+        }
+
+        form input {
+            border: 2px solid $desaturated-red;
+            border-radius: 5rem;
+            height: 3.375rem;
+            font-size: 1rem;
+            padding: 1.25rem 2.125rem;
+
+            &:focus, &:active {
+                outline: none;
+            }
+
+            &::placeholder {
+                color: $desaturated-red;
+                opacity: 1;
+            }
+            
+            @include breakpoint-down(medium) {
+                width: 20rem;
+            }
+    
+            @include breakpoint-up(medium) {
+                width: 28rem;
+            }
+        }
+
+        button {
+            position: absolute;
+            border: none;
+            width: 6.3125rem;
+            height: 3.4275rem;
+            border-radius: 5rem;
+            cursor: pointer;
+            background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+            transition: all 300ms ease-in-out;
+
+            &:hover {
+                opacity: 0.7;
+                box-shadow: 2px 2px 16px 3px $soft-red;
+            }
+
+            @include breakpoint-down(medium) {
+                top: -1.375rem;
+                bottom: 0;
+                right: 0;
+            }
+
+            @include breakpoint-up(medium) {
+                top: -1.375rem;
+                bottom: 0;
+                right: 0;
+            }
+
+            @include breakpoint-up(large) {
+                top: -1.375rem;
+                bottom: 0;
+                right: 0;
+            }
+
+            img {
+                background: transparent;
+            }
+        }
+    }
+}
